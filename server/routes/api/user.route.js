@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const { body, validationResult } = require("express-validator");
+const bcrypt = require("bcrypt");
 
 // Utils
 const { getAccessToken, getRefreshToken } = require("../../utils/auth");

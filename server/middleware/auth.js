@@ -1,11 +1,10 @@
 const jwt = require("jsonwebtoken");
-const responseError = require("../utils/responseError");
 
 module.exports = authJWT = (type) => {
   return (req, res, next) => {
     // Check if not token
     if (!req.header("Authorization")) {
-      return responseError(res, 401, "Access Denied")
+      return res.status(401).json({ message: "Access Denied"})
     }
 
     const token = req.header("Authorization").split(" ")[1];
@@ -21,7 +20,7 @@ module.exports = authJWT = (type) => {
       next();
     } catch (err) {
       console.log(err);
-      return responseError(res, 401, "Access Denied")
+      return res.status(401).json({ message: "Access Denied"})
     }
   };
 };

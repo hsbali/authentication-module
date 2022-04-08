@@ -7,7 +7,7 @@ const bcrypt = require("bcrypt");
 const { getRefreshToken, getAccessToken } = require("../../utils/auth");
 
 // Middleware
-const auth = require("../../../../middlewares/auth");
+const auth = require("../../middleware/auth");
 
 // Models
 const User = require("../../models/User");
@@ -52,13 +52,13 @@ router.post(
       if (!user) return res.status(400).json({ message: "Incorrect email or password"});
 
       // Matching User password and email
-      const isMatch = await bcrypt.compare(password, customer.password);
+      const isMatch = await bcrypt.compare(password, user.password);
       if (!isMatch) return res.status(400).json({ message: "Incorrect email or password"});
       
 
       // return jsonwebtoken
-      let refreshToken = getRefreshToken(customer, "user");
-      let accessToken = getAccessToken(customer, "user");
+      let refreshToken = getRefreshToken(user, "user");
+      let accessToken = getAccessToken(user, "user");
 
       if (!refreshToken || !accessToken) throw "Cannot get Access token or Refresh token";
 
