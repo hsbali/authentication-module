@@ -2,7 +2,7 @@
 
 ## Preview
 
-![Preview GIF](https://raw.githubusercontent.com/hsbali/authentication-module/main/preview.gif)
+![Preview GIF](https://raw.githubusercontent.com/hsbali/authentication-module/master/preview.gif)
 
 ## Build using [ReactJs](https://reactjs.org/) and [NodeJs](https://nodejs.org/) Server.
 
@@ -17,5 +17,5 @@ Additional Technologies used:
 - Server
     - [MongoDB](https://www.mongodb.com/) ([Mongoose](https://mongoosejs.com/))
     - [JsonWebToken](https://www.npmjs.com/package/jsonwebtoken)
-    
+
 
