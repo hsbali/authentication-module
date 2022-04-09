@@ -15,6 +15,7 @@ Additional Technologies used:
     - [Scss](https://sass-lang.com/)
 
 - Server
+    - [Express](https://expressjs.com/)
     - [MongoDB](https://www.mongodb.com/) ([Mongoose](https://mongoosejs.com/))
     - [JsonWebToken](https://www.npmjs.com/package/jsonwebtoken)
 
